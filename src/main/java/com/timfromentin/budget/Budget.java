@@ -20,6 +20,6 @@ public class Budget {
     }
 
     public long totalInCentsByCategory(String category) {
-        return 1;
+        return 0;
     }
 }
