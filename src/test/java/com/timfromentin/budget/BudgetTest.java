@@ -25,4 +25,15 @@ class BudgetTest {
 
         assertThat(result).isEqualTo(1250);
     }
+
+    @Test
+    void shouldSumTwoExpenses(){
+
+        budget.addExpense(1250);
+        budget.addExpense(750);
+
+        long result = budget.totalInCents();
+
+        assertThat(result).isEqualTo(2000);
+    }
 }
