@@ -8,7 +8,11 @@ public class Budget {
     private final List<Long> expenses = new ArrayList<>();
 
     public long totalInCents() {
-        return 0;
+        long total = 0;
+        for (long expense : expenses){
+            total += expense;
+        }
+        return total;
     }
 
     public void addExpense(long expense) {
