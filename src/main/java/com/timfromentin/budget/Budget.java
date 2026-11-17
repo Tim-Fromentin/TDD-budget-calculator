@@ -5,18 +5,19 @@ import java.util.List;
 
 public class Budget {
 
-    private final List<Long> expenses = new ArrayList<>();
+    private final List<Expense> expenses = new ArrayList<>();
 
     public long totalInCents() {
         long total = 0;
-        for (long expense : expenses) {
-            total += expense;
+        for (Expense expense : expenses) {
+            total += expense.amountInCents();
         }
         return total;
     }
 
     public void addExpense(long expense, String category) {
-        expenses.add(expense);
+        Expense expenseWithCategory = new Expense(expense, category);
+        expenses.add(expenseWithCategory);
     }
 
     public long totalInCentsByCategory(String category) {
