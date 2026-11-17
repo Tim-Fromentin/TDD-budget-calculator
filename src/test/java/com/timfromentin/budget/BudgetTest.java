@@ -44,4 +44,14 @@ class BudgetTest {
 
         assertThat(result).isEqualTo(0);
     }
+
+    @Test
+    void shouldReturnAllExpenseByCategory(){
+        budget.addExpense(500, "food");
+        budget.addExpense(100, "food");
+
+        long result = budget.totalInCentsByCategory("food");
+
+        assertThat(result).isEqualTo(600);
+    }
 }
