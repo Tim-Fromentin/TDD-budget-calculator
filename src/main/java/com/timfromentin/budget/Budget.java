@@ -18,4 +18,8 @@ public class Budget {
     public void addExpense(long expense) {
         expenses.add(expense);
     }
+
+    public long totalInCentsByCategory(String category) {
+        return 1;
+    }
 }

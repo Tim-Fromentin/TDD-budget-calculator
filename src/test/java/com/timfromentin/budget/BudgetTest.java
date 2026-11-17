@@ -36,4 +36,12 @@ class BudgetTest {
 
         assertThat(result).isEqualTo(2000);
     }
+
+    @Test
+    void shouldReturnTotalByCategory_whenNoExpense(){
+
+        long result = budget.totalInCentsByCategory("food");
+
+        assertThat(result).isEqualTo(0);
+    }
 }
