@@ -15,7 +15,7 @@ public class Budget {
         return total;
     }
 
-    public void addExpense(long expense) {
+    public void addExpense(long expense, String category) {
         expenses.add(expense);
     }
 

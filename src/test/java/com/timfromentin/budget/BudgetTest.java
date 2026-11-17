@@ -19,7 +19,7 @@ class BudgetTest {
     @Test
     void shouldReturnTotal_whenOneExpense() {
 
-        budget.addExpense(1250);
+        budget.addExpense(1250, "food");
 
         long result = budget.totalInCents();
 
@@ -29,8 +29,8 @@ class BudgetTest {
     @Test
     void shouldSumTwoExpenses(){
 
-        budget.addExpense(1250);
-        budget.addExpense(750);
+        budget.addExpense(1250, "food");
+        budget.addExpense(750, "car");
 
         long result = budget.totalInCents();
 
