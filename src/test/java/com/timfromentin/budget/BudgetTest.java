@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class BudgetTest {
 
-    Budget budget = new Budget();
+    private Budget budget = new Budget();
 
     @Test
     void shouldReturnZero_whenNoExpense() {
@@ -20,7 +20,9 @@ class BudgetTest {
     void shouldReturnTotal_whenOneExpense() {
 
         budget.addExpense(1250);
+
         long result = budget.totalInCents();
+
         assertThat(result).isEqualTo(1250);
     }
 }

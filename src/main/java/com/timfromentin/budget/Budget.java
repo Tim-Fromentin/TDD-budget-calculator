@@ -9,7 +9,7 @@ public class Budget {
 
     public long totalInCents() {
         long total = 0;
-        for (long expense : expenses){
+        for (long expense : expenses) {
             total += expense;
         }
         return total;
