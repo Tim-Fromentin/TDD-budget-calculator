@@ -3,6 +3,7 @@ package com.timfromentin.budget;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class BudgetTest {
 
@@ -63,5 +64,14 @@ class BudgetTest {
         long result = budget.totalInCentsByCategory("travel");
 
         assertThat(result).isEqualTo(100);
+    }
+
+    @Test
+    void shouldReturnIllegalArgumentException_whenAddNegativeExpense(){
+
+        assertThatThrownBy(() -> budget.addExpense(-200, "travel"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Une dépense ne peut pas être négative.");
+
     }
 }
