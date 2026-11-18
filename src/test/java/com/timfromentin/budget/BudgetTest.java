@@ -54,4 +54,14 @@ class BudgetTest {
 
         assertThat(result).isEqualTo(600);
     }
+
+    @Test
+    void shouldReturnAllExpenseByCategory_whenMultipleCategoryExpense(){
+        budget.addExpense(300, "food");
+        budget.addExpense(100, "travel");
+
+        long result = budget.totalInCentsByCategory("travel");
+
+        assertThat(result).isEqualTo(100);
+    }
 }
