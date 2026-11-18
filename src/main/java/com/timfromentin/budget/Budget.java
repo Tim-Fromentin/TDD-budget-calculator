@@ -2,6 +2,7 @@ package com.timfromentin.budget;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Budget {
 
@@ -21,6 +22,12 @@ public class Budget {
     }
 
     public long totalInCentsByCategory(String category) {
-        return 0;
+        long total = 0;
+        for (Expense expense : expenses){
+            if (Objects.equals(expense.category(), category)){
+                total += expense.amountInCents();
+            }
+        }
+        return total;
     }
 }
