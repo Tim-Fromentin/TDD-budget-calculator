@@ -74,4 +74,15 @@ class BudgetTest {
                 .hasMessage("Une dépense ne peut pas être négative.");
 
     }
+
+    @Test
+    void shouldReturnTotal_afterAIllegalArgumentException(){
+        budget.addExpense(-20, "food");
+        budget.addExpense(20, "food");
+        budget.addExpense(50, "travel");
+
+        long result = budget.totalInCents();
+
+        assertThat(result).isEqualTo(70);
+    }
 }
