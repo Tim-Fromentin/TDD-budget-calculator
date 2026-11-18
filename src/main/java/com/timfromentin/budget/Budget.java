@@ -17,6 +17,9 @@ public class Budget {
     }
 
     public void addExpense(long expense, String category) {
+        if (expense < 1){
+            throw new IllegalArgumentException("Une dépense ne peut pas être négative.");
+        }
         Expense expenseWithCategory = new Expense(expense, category);
         expenses.add(expenseWithCategory);
     }
